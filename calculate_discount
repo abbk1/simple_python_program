@@ -1,0 +1,10 @@
+def discount_percentage(price, discount):
+    if discount < 20:
+        return f"The Price is {price}, discount less than 20%"
+    else:
+        return  price * (discount/ 100)
+
+
+price = int(input("Enter product Price: "))
+discount = int(input("Enter Discount Percentage %: "))
+print(discount_percentage(price, discount))
