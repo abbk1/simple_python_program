@@ -1,3 +1,4 @@
+#Reading and Wrirting File content
 file = open('files/example.txt', 'r')
 file = file.read().strip()
 print(file, end="")
@@ -6,3 +7,15 @@ print(file, end="")
 newFile = open('files/example1.txt', 'w') 
 for data in file:
     newFile.write(data)
+#handling file error
+fileName = str(input("Enter File Name with txt Extention: "))
+
+if os.path.exists('files/'+fileName+'.txt'):
+    print('file exist'.upper(),'\'files/'+fileName+'.txt\'')
+    try:
+        with open('files/'+fileName+'.txt') as f:
+            print(f.read())
+    except FileNotFoundError:
+        print("Pls Check your File Name for Error")
+else:
+    print('This File Name did not Exists','\'files/'+fileName+'.txt\'')
