@@ -1,0 +1,8 @@
+file = open('files/example.txt', 'r')
+file = file.read().strip()
+print(file, end="")
+
+
+newFile = open('files/example1.txt', 'w') 
+for data in file:
+    newFile.write(data)
